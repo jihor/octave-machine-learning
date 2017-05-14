@@ -10,11 +10,12 @@ disp("write a function using gradient descent to compute inv(A)*b,")
 disp("which will be the optimal parameters for hypothesis\n")
 
 function x = matrixInverseVector(A, b, x_init, alpha)
+  m = rows(A);
   x = x_init - alpha*2*A'*(A*x_init - b);
   i = 0;
   max_i = 10000;
   while (!isnan(norm(A*x - b) ^ 2) && norm(A*x - b) ^ 2 > 10 ^ - 4 && i < max_i)
-     x = x - alpha*2*A'*(A*x - b);
+     x = x - (alpha/m)*A'*(A*x - b);
      i += 1;
   endwhile
   if isnan(norm(A*x - b) ^ 2)
@@ -38,4 +39,5 @@ matrixInverseVector(A, b, x, 0.1)
 matrixInverseVector(A, b, x, 0.3)
 matrixInverseVector(A, b, x, 1)
 
-A \ b     % actually does the same and computes inv(A)*b far faster
+A \ b             % actually does the same and computes inv(A)*b far faster
+pinv(A'*A)*A'*b   % same using normal equation
