@@ -56,8 +56,8 @@ B .\ A     % [0.1 0.1; 0.1 0.1; 0.1 0.1] - .\ does element-wise division, right 
 
 % Solving simple equations
 disp("\nSolving AxB = C equations")
-A \ [4; 10; 16]       % [2; 1] - A\B returns T for AxT = B equation
-[4; 10; 16] / [2; 1]  % [1.6 0.8; 4 2; 6.4 3.2] - A/B returns T for TxA = B equation
+A \ [4; 10; 16]       % [2; 1] - A\b returns T for AxT = b equation. I.e. T = inv(A)*b
+[4; 10; 16] / [2; 1]  % [1.6 0.8; 4 2; 6.4 3.2] - A/b returns T for TxA = b equation. I.e. T = b*inv(A)
                       % [1.6 0.8;   4   2; 6.4 3.2] * [2; 1] = [4; 10; 16]
                       % and
                       % [  1   2;   3   4;   5   6] * [2; 1] = [4; 10; 16]
