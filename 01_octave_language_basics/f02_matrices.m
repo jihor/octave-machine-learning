@@ -17,6 +17,7 @@ E = 1:6                % vector containing [1..6] range with step of 1
 size(A)                % 3x2. The result itself is a 1 x 2 matrix
 size(A, 1)             % 3
 size(A, 2)             % 2
+A(1:6)                 % 1 3 5 2 4 6
 length(A)              % 3 - length returns the largest dimension value
 
 % Matrix generation functions
