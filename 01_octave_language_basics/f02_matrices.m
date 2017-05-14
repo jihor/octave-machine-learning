@@ -17,7 +17,15 @@ E = 1:6                % vector containing [1..6] range with step of 1
 size(A)                % 3x2. The result itself is a 1 x 2 matrix
 size(A, 1)             % 3
 size(A, 2)             % 2
-A(1:6)                 % 1 3 5 2 4 6
+a1 = A(1:6)            % 1 3 5 2 4 6
+size(a1)               % 1x6
+a2 = A(:)
+size(a2)               % 6x1
+a3 = A(:,2)            % 2 4 6 - select all rows, 2nd column
+size(a3)               % 3x1
+a3 = A(1:2,1)          % 1 3 - select rows [1..2], 1st column
+size(a3)               % 2x1
+
 length(A)              % 3 - length returns the largest dimension value
 
 % Matrix generation functions
