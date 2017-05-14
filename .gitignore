@@ -1,0 +1,4 @@
+.idea/
+01_octave_language_basics/data/tmp/
+**/octave-workspace
+**/*.iml
