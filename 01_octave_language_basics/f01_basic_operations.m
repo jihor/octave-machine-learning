@@ -55,3 +55,14 @@ g    % 3.1416
 % Help
 disp("\nUsing help")
 help disp    % print help for disp() command
+
+% Variables
+% disp("\nManaging variables in scope")
+who          % display all variables
+whos         % display all variables with detailed infot
+type c       % display type and value of variable c
+exist c      % check if variable c exists -> true (1)
+clear a b c  % expunge variable a, b and c
+exist c      % check if variable c exists -> false (0)
+clear -a     % expunge all variables
+             % For complete docs, see https://www.gnu.org/software/octave/doc/interpreter/Status-of-Variables.html
