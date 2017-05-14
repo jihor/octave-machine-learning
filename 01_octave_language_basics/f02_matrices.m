@@ -11,6 +11,7 @@ B = [1 2;
 C = [1; 2; 3]          % vector
 
 D = 1:0.1:2            % vector containing [1..2] range with step of 0.1
+D1 = [1:0.1:2]         % same
 
 E = 1:6                % vector containing [1..6] range with step of 1
 
