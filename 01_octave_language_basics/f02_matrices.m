@@ -72,6 +72,7 @@ disp("\nMatrix generation functions")
 F = ones(3,2)          % 3x2 matrix of ones
 G = zeros(3,2)         % 3x2 matrix of zeros. Note that it's 'zeros', not 'zeroes' like in NumPy
 H = eye(3)             % 3x3 identity matrix
+flipud(eye(3))         % flipped identity matrix will have the other diagonal filled with ones, which may be of some use
 
 I = rand(3,2)          % 3x2 matrix of random-distributed values in [0..1] range
                        % (uniform distribution)
