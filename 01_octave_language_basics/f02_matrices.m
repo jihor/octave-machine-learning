@@ -23,8 +23,10 @@ a2 = A(:)
 size(a2)               % 6x1
 a3 = A(:,2)            % 2 4 6 - select all rows, 2nd column
 size(a3)               % 3x1
-a3 = A(1:2,1)          % 1 3 - select rows [1..2], 1st column
-size(a3)               % 2x1
+a4 = A(1:2,1)          % 1 3 - select rows [1..2], 1st column
+size(a4)               % 2x1
+a5 = A([1 3],:)        % 1 5 2 6 - select only rows 1 and 3, all columns
+size(a5)               % 2x2
 
 length(A)              % 3 - length returns the largest dimension value
 
