@@ -1,7 +1,8 @@
 % this is a comment
 
 % Files are named with prefix 'f' because Octave cannot run files starting with a digit.
-% Run Octave CLI, cd into this directory (Octave has Linux-like cd / pwd / ls commands), then type name of this file in the CLI and push Enter
+% Run Octave CLI, cd into this directory (Octave has Linux-like cd / pwd / ls commands),
+% then type name of this file (without .m extension) in the CLI and push Enter
 
 % Printing output
 disp("--- You are running 'f01_basic_operations' file now, congratulations ---")
