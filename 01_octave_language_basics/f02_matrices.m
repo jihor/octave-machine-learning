@@ -17,6 +17,7 @@ E = 1:6                % vector containing [1..6] range with step of 1
 size(A)                % 3x2. The result itself is a 1 x 2 matrix
 size(A, 1)             % 3
 size(A, 2)             % 2
+length(A)              % 3 - length returns the largest dimension value
 a1 = A(:)              % 1 3 5 2 4 6 - a vector created from this matrix (rows-first)
 size(a1)               % 6x1
 a2 = A(1:5)            % 1 3 5 2 4 - range, also rows-first, but an 1xM matrix, not Nx1 vector
@@ -32,7 +33,10 @@ A(:,2) = [10 11 12]    % also works with a 1x3 matrix insead of vector
 A = [A, [100; 101; 102]]  % add third row with [100; 101; 102] vector.
                           % this will throw a dimensions mismatch error if a [100 101 102] or [100, 101, 102] 1x3 matrix is passed
 
-length(A)              % 3 - length returns the largest dimension value
+A = [1 2; 3 4; 5 6]
+B = [10 20; 30 40; 50 60]
+C = [A B]      % concatenate adding columns, [A, B] does the same
+D = [A; B]     % concatenate adding rows
 
 % Matrix generation functions
 disp("\nMatrix generation functions")
