@@ -35,14 +35,43 @@ A = [A, [100; 101; 102]]  % add third row with [100; 101; 102] vector.
 
 A = [1 2; 3 4; 5 6]
 B = [10 20; 30 40; 50 60]
-C = [A B]      % concatenate adding columns, [A, B] does the same
-D = [A; B]     % concatenate adding rows
+C = [1 2; 2 4]
+[A B]      % concatenate adding columns, [A, B] does the same
+[A; B]     % concatenate adding rows
+A .* 5     % [  5  10;  15  20;  25  30]
+A * 5      % [  5  10;  15  20;  25  30]
+A .* B     % [ 10  40;  90 160; 250 360] - .* does element-wise multiplication. Matrices must have the same dimensions
+A * C      % [  5  10;  11  22;  17  34] - * does the usual matrix multiplication, where MxN * NxL -> MxL
+
+A'         % [1 3 5; 2 4 6 ] - transposition
+flipud(A)  % [5 6; 3 4; 1 2] - flip the matrix
+
+max(A)                       % [5 6]     - column-wise maximum
+max(A,[],1)                  % [5 6]     - same, column-wise maximum
+max(A,[],2)                  % [2; 4; 6] - row-wise maximum
+max(A(:))                    % 6 - max of a vector is just one digit
+max(max(A))                  % 6 - same
+max([1 3; 5 7],[0 4; 3 9])   % [1 4; 5 9] - element-wise maximum for two matrices
+
+min(A)                       % [1 2] - column-wise minimum
+min([1 3; 5 7],[0 4; 3 9])   % [0 3; 3 7] - element-wise minimum for two matrices
+
+A < 4      % [1 1; 1 0; 0 0] - element-wise comparison. Use find() to get the actual values
+sum(A)     % [9 12]     - column-wise sum of all elements
+sum(A, 1)  % [9 12 ]    - same, column-wise sum of all elements
+sum(A, 2)  % [3; 7; 11] - row-wise sum of all elements
+prod(A)    % [15 48] - column-wise product of all elements
+
+A ./ 10    % [0.1 0.2; 0.3 0.4; 0.5 0.6]
+A / 10     % [0.1 0.2; 0.3 0.4; 0.5 0.6]
+10 ./ A    % [ 10 5.0; 3.3 2.5; 2.0 1.67]
+A ./ B     % [0.1 0.1; 0.1 0.1; 0.1 0.1] - ./ does element-wise division. Matrices must have the same dimensions
 
 % Matrix generation functions
 disp("\nMatrix generation functions")
 F = ones(3,2)          % 3x2 matrix of ones
 G = zeros(3,2)         % 3x2 matrix of zeros. Note that it's 'zeros', not 'zeroes' like in NumPy
-H = eye(3,3)           % 3x3 identity matrix
+H = eye(3)             % 3x3 identity matrix
 
 I = rand(3,2)          % 3x2 matrix of random-distributed values in [0..1] range
                        % (uniform distribution)
