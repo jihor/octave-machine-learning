@@ -98,10 +98,10 @@ flipud(eye(3))         % flipped identity matrix will have the other diagonal fi
 I = rand(3,2)          % 3x2 matrix of random-distributed values in [0..1] range
                        % (uniform distribution)
 
-J = randn(3,2)         % 3x2 matrix of random-distributed values in [-..1] range
+J = randn(3,2)         % 3x2 matrix of random-distributed values
                        % (normal / gaussian distribution with mean value = 0 and variance = 1)
 
-K = randn(3,2)         % 3x2 matrix of random-distributed values in [-..1] range
+K = randn(3,2)         % 3x2 matrix of random-distributed values
                        % (normal / gaussian distribution with mean value = 0 and variance = 1)
 
 hist(randn(1,10000), 100)    % print histogam with 10 bins
