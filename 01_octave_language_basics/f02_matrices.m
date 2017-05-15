@@ -55,9 +55,9 @@ A ./ B     % [0.1 0.1; 0.1 0.1; 0.1 0.1] - ./ does element-wise division, left a
 B .\ A     % [0.1 0.1; 0.1 0.1; 0.1 0.1] - .\ does element-wise division, right arg over left arg. Matrices must have the same dimensions
 
 % Solving simple equations
-disp("\nSolving AxB = C equations")
-A \ [4; 10; 16]       % [2; 1] - A\b returns T for AxT = b equation. I.e. T = inv(A)*b
-[4; 10; 16] / [2; 1]  % [1.6 0.8; 4 2; 6.4 3.2] - A/b returns T for TxA = b equation. I.e. T = b*inv(A)
+disp("\nSolving Ax = b equations")
+A \ [4; 10; 16]       % [2; 1] - A\b returns x for Ax = b equation. I.e. x = inv(A)*b
+[4; 10; 16] / [2; 1]  % [1.6 0.8; 4 2; 6.4 3.2] - A/b returns x for xA = b equation. I.e. x = b*inv(A)
                       % [1.6 0.8;   4   2; 6.4 3.2] * [2; 1] = [4; 10; 16]
                       % and
                       % [  1   2;   3   4;   5   6] * [2; 1] = [4; 10; 16]
