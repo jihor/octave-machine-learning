@@ -27,22 +27,37 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, iteration_coun
 endfunction
 
 theta = [0; 1];                  % Let's start with theta0 = 0 and theta1 = 0
-iteration_count = 10000;
-alpha = 0.001;                   % gradient descent step
 
-[theta1, J_history1] = gradientDescent(X1, y, theta, 0.01,  1000);
-[theta2, J_history2] = gradientDescent(X2, y, theta, 0.001, 50000);
-[theta3, J_history3] = gradientDescent(X3, y, theta, 0.01,  1000);
+alpha1 = 0.01;
+iteration_count1 = 1000;
+
+alpha2 = 0.001;
+iteration_count2 = 50000;
+
+alpha3 = 0.01;
+iteration_count3 = 1000;
+
+[theta1, J_history1] = gradientDescent(X1, y, theta, alpha1, iteration_count1);
+[theta2, J_history2] = gradientDescent(X2, y, theta, alpha2, iteration_count2);
+[theta3, J_history3] = gradientDescent(X3, y, theta, alpha3, iteration_count3);
 
 hold on;                         % don't erase existing plot
 
+plot(x, X1*theta1, '-r');
+plot(x, X2*theta2, '-b');
+plot(x, X3*theta3, '-k');
 
 fprintf('Cost for theta0 + theta1 * log(x) = %f\n', [cost(X1, y, theta1)]);
 fprintf('Cost for theta0 + theta1 * x = %f\n', [cost(X2, y, theta2)]);
 fprintf('Cost for theta0 + theta1 * sqrt(x) = %f\n', [cost(X3, y, theta3)]);
 
-plot(x, X1*theta1, '-k');
-plot(x, X2*theta2, '-r');
-plot(x, X3*theta3, '-b');
+figure (2);       % open new window
+hold on;
 
-
+iters = [1:100];
+title('Cost of first 100 iterations');
+xlabel('N_i_t_e_r');
+ylabel('Cost');
+plot(iters, J_history1(1:100), '-r');
+plot(iters, J_history2(1:100), '-b');
+plot(iters, J_history3(1:100), '-k');
