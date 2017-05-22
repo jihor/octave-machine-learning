@@ -45,7 +45,8 @@ hold on;                         % don't erase existing plot
 
 plot(x, X1*theta1, '-r');
 plot(x, X2*theta2, '-b');
-plot(x, X3*theta3, '-k');
+plot(x, X3*theta3, '-m');
+legend('Test data','\theta_0 + \theta_1 \cdot log(x)','\theta_0 + \theta_1 \cdot x','\theta_0 + \theta_1 \cdot sqrt(x)');
 
 fprintf('Cost for theta0 + theta1 * log(x) = %f\n', [cost(X1, y, theta1)]);
 fprintf('Cost for theta0 + theta1 * x = %f\n', [cost(X2, y, theta2)]);
@@ -56,8 +57,10 @@ hold on;
 
 iters = [1:100];
 title('Cost of first 100 iterations');
-xlabel('N_i_t_e_r');
+xlabel('N_{iter}');
 ylabel('Cost');
+
 plot(iters, J_history1(1:100), '-r');
 plot(iters, J_history2(1:100), '-b');
-plot(iters, J_history3(1:100), '-k');
+plot(iters, J_history3(1:100), '-m');
+legend('\theta_0 + \theta_1 \cdot log(x)','\theta_0 + \theta_1 \cdot x','\theta_0 + \theta_1 \cdot sqrt(x)');
