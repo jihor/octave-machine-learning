@@ -2,7 +2,7 @@ close all force;
 clear;
 clc;
 
-disp("--- You are running 'f01_linear_regression' file now ---")
+disp("--- You are running 'f01_simple_regression' file now ---")
 
 % ------------------------ Functions ------------------------
 
