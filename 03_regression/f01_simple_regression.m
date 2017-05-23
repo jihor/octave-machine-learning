@@ -42,7 +42,7 @@ X1_norm = [ones(m, 1), featureNormalize(log(x))];
 X2_norm = [ones(m, 1), featureNormalize(x)];
 X3_norm = [ones(m, 1), featureNormalize(sqrt(x))];
 
-theta = [0; 1];                  % Let's start with theta0 = 0 and theta1 = 0
+theta = [0; 1];                  % Let's start with theta0 = 0 and theta1 = 1
 
 alpha1 = 0.01;
 iteration_count1 = 1000;
