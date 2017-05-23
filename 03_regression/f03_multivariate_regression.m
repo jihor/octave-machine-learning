@@ -2,7 +2,7 @@ close all force;
 clear;
 clc;
 
-disp("--- You are running 'f01_simple_regression' file now ---")
+disp("--- You are running 'f03_multivariate_regression' file now ---")
 
 % ------------------------ Functions ------------------------
 
@@ -58,10 +58,10 @@ iteration_count = 1000;
 
 hold on;                         % don't erase existing plot
 
-plot3(x1, x2, X1*theta1, '-r');
-plot3(x1, x2, X2*theta2, '-b');
-plot3(x1, x2, X1_norm*theta1_norm, '-y');
-plot3(x1, x2, X2_norm*theta2_norm, '-m');
+plot3(x1, x2, X1*theta1, '.r');
+plot3(x1, x2, X2*theta2, '.b');
+plot3(x1, x2, X1_norm*theta1_norm, '.y');
+plot3(x1, x2, X2_norm*theta2_norm, '.m');
 legend('Test data','\theta_0 + \theta_1 \cdot log(x_1) + \theta_2 \cdot log(x_2)','\theta_0 + \theta_1 \cdot sqrt(x_1) + \theta_2 \cdot sqrt(x_2)', '\theta_0 + \theta_1 \cdot log(x_1) + \theta_2 \cdot log(x_2) (normalized)','\theta_0 + \theta_1 \cdot sqrt(x_1) + \theta_2 \cdot sqrt(x_2) (normalized)', 'location', 'southeast');
 
 fprintf('Cost for theta0 + theta1 * log(x) = %f\n', [cost(X1, y, theta1)]);
