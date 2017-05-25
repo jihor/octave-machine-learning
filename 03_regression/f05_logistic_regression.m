@@ -59,7 +59,7 @@ theta_init = [-80; 1; 1];     % A pretty close initial guess. Without good guess
 alpha = 0.01;
 iteration_count = 1000;
 
-% simple gradient descnent yields NaN's, because sigmoid is not a bowl-shaped function
+% simple gradient descent yields NaN's, because sigmoid is not a bowl-shaped function
 [theta1, cost1] = gradientDescentWithCostFunction(X, y, theta_init, alpha, iteration_count, @costSigmoid1);
 theta1
 cost1
